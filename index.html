@@ -483,12 +483,279 @@
     letter-spacing: 0.05em;
   }
 
+  /* ── TABS ── */
+  .tab-nav {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 48px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0;
+  }
+
+  .tab-btn {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+  }
+
+  .tab-btn:hover { color: var(--text); }
+
+  .tab-btn.active {
+    color: var(--red);
+    border-bottom-color: var(--red);
+  }
+
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* ── PICKLIST TAB ── */
+  .picklist-intro {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .picklist-intro-left h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 10px;
+    letter-spacing: 0.03em;
+  }
+
+  .picklist-intro-left p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .picklist-principles {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .principle {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .principle-icon {
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .principle strong { color: var(--text); }
+
+  .picklist-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .picklist-group {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .picklist-group-header {
+    padding: 18px 24px;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .picklist-group-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .group-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .picklist-group-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+  }
+
+  .group-rationale {
+    font-size: 12.5px;
+    color: var(--muted);
+    max-width: 480px;
+    line-height: 1.5;
+  }
+
+  .picklist-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0;
+  }
+
+  .picklist-item {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--dim);
+    border-right: 1px solid var(--dim);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: background 0.15s;
+  }
+
+  .picklist-item:hover { background: rgba(255,255,255,0.02); }
+
+  .picklist-item-label {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .picklist-item-desc {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .picklist-item-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 4px;
+    width: fit-content;
+  }
+
+  .tag-recoverable { background: rgba(245,166,35,0.12); color: var(--amber); }
+  .tag-disqualify  { background: rgba(224,92,58,0.12);  color: var(--red); }
+  .tag-pricing     { background: rgba(58,214,176,0.10); color: var(--teal); }
+  .tag-competitive { background: rgba(123,127,255,0.10); color: var(--indigo); }
+  .tag-process     { background: rgba(245,166,35,0.08); color: #b87d1a; }
+
+  .retired-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 48px;
+  }
+
+  .retired-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .retired-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+  }
+
+  .retired-item {
+    background: var(--surface2);
+    border: 1px solid var(--dim);
+    border-radius: 8px;
+    padding: 12px 16px;
+  }
+
+  .retired-item-label {
+    font-size: 12.5px;
+    color: var(--muted);
+    text-decoration: line-through;
+    margin-bottom: 3px;
+  }
+
+  .retired-item-replace {
+    font-size: 11.5px;
+    color: var(--dim);
+  }
+
+  .retired-item-replace span {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .notes-field-callout {
+    background: linear-gradient(135deg, var(--surface2) 60%, rgba(123,127,255,0.06));
+    border: 1px solid rgba(123,127,255,0.25);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 48px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+
+  .notes-callout-icon {
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  .notes-callout-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--indigo);
+    letter-spacing: 0.03em;
+    margin-bottom: 6px;
+  }
+
+  .notes-callout-body {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .notes-callout-body strong { color: var(--text); }
+
   @media (max-width: 720px) {
     .kpi-grid, .sub-grid { grid-template-columns: repeat(2,1fr); }
     .cat-grid, .spotlight-grid { grid-template-columns: 1fr; }
     .header { flex-direction: column; align-items: flex-start; }
     .header-meta { text-align: left; }
     .funnel-row { grid-template-columns: 120px 1fr 50px; }
+    .picklist-intro { grid-template-columns: 1fr; }
+    .picklist-items { grid-template-columns: 1fr; }
+    .tab-nav { overflow-x: auto; }
   }
 </style>
 </head>
@@ -516,6 +783,15 @@
     <span>ℹ</span>
     Free Trial Cancellations excluded — automated expirations, not genuine competed losses.
   </div>
+
+  <!-- TAB NAV -->
+  <nav class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('analysis', this)">📊 Loss Analysis</button>
+    <button class="tab-btn" onclick="switchTab('picklist', this)">🏷 Recommended Picklist</button>
+  </nav>
+
+  <!-- TAB: ANALYSIS -->
+  <div id="tab-analysis" class="tab-panel active">
 
   <!-- KPI STRIP -->
   <div class="section-label">At a glance</div>
@@ -839,6 +1115,293 @@
     <span>LASSO · LASSO Platform Pipeline · New Business Only · Closed Lost Analysis</span>
     <span>Feb 2024 – Feb 2026 · Free Trial Cancellations Excluded</span>
   </footer>
+
+  </div><!-- end tab-analysis -->
+
+  <!-- TAB: PICKLIST -->
+  <div id="tab-picklist" class="tab-panel">
+
+    <!-- NOTES FIELD CALLOUT -->
+    <div class="notes-field-callout">
+      <div class="notes-callout-icon">📝</div>
+      <div>
+        <div class="notes-callout-title">Designed to work alongside a Notes field</div>
+        <div class="notes-callout-body">
+          These picklist values assume a separate <strong>Closed Lost Reason Notes</strong> free-text field exists on the deal record.
+          The single-select keeps reporting clean and consistent. The notes field is where reps provide context, competitive details, specific objections, or anything that doesn't fit a category neatly.
+          Together they solve the problem this dataset exposed: <strong>"Bad Fit: See Notes for Details" tells you nothing on its own.</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- DESIGN PRINCIPLES -->
+    <div class="picklist-intro" style="margin-bottom:32px">
+      <div class="picklist-intro-left">
+        <h2>Design Principles</h2>
+        <p>The current LASSO picklist has 85+ multi-select values leading to inconsistent tagging, "See Notes" as a catch-all, and zero actionable signal on ~15% of deals. This redesign collapses everything into <strong>13 clean single-select values</strong> across 4 categories — enough specificity to act on, not so many that reps game it.</p>
+      </div>
+      <div class="picklist-principles">
+        <div class="principle">
+          <span class="principle-icon">✦</span>
+          <div><strong>Single-select only.</strong> Forces a primary reason per deal. Multi-select diffuses accountability and makes reporting meaningless.</div>
+        </div>
+        <div class="principle">
+          <span class="principle-icon">✦</span>
+          <div><strong>No "See Notes" option.</strong> Notes belong in the notes field. Every picklist value should be reportable on its own.</div>
+        </div>
+        <div class="principle">
+          <span class="principle-icon">✦</span>
+          <div><strong>Mutually exclusive categories.</strong> Each value has one home. If a deal is both Bad Fit and Timing, reps pick the primary reason.</div>
+        </div>
+        <div class="principle">
+          <span class="principle-icon">✦</span>
+          <div><strong>Actionable segmentation.</strong> Every value maps to a distinct follow-up action — nurture, disqualify, escalate, or re-price.</div>
+        </div>
+        <div class="principle">
+          <span class="principle-icon">✦</span>
+          <div><strong>Honest competitive tracking.</strong> Competitive losses need their own value so displacement doesn't hide in Bad Fit.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GROUP 1: TIMING / RECOVERABLE -->
+    <div class="section-label">Recommended picklist values</div>
+    <div class="picklist-groups">
+
+      <div class="picklist-group">
+        <div class="picklist-group-header">
+          <div class="picklist-group-title">
+            <div class="group-dot" style="background:var(--amber)"></div>
+            <div class="picklist-group-name c-amber">Sales Process</div>
+          </div>
+          <div class="group-rationale">Currently ~68% of NB losses. Highest-volume category — these are your most recoverable deals and most fixable process gaps.</div>
+        </div>
+        <div class="picklist-items">
+
+          <div class="picklist-item">
+            <div class="picklist-item-label">Not the Right Time</div>
+            <div class="picklist-item-desc">Prospect is interested but has explicitly pushed to a future date or budget cycle. Not a no — a not yet.</div>
+            <span class="picklist-item-tag tag-recoverable">Re-engage in 60–90 days</span>
+          </div>
+
+          <div class="picklist-item">
+            <div class="picklist-item-label">Went Dark / Unresponsive</div>
+            <div class="picklist-item-desc">Prospect engaged, then stopped responding. No explicit objection — they just disappeared from the process.</div>
+            <span class="picklist-item-tag tag-recoverable">Re-engage at 30 days</span>
+          </div>
+
+          <div class="picklist-item">
+            <div class="picklist-item-label">Never Booked a Demo</div>
+            <div class="picklist-item-desc">Lead entered the pipeline but never scheduled a discovery or demo call. Process failure before a conversation started.</div>
+            <span class="picklist-item-tag tag-process">SDR / Handoff audit</span>
+          </div>
+
+          <div class="picklist-item">
+            <div class="picklist-item-label">No Decision Maker Involved</div>
+            <div class="picklist-item-desc">Conversations were with someone who couldn't buy. Budget holder or exec was never engaged during the sales cycle.</div>
+            <span class="picklist-item-tag tag-process">Multi-thread earlier</span>
+          </div>
+
+          <div class="picklist-item">
+            <div class="picklist-item-label">Not Serious / Tire Kicker</div>
+            <div class="picklist-item-desc">Prospect was browsing, doing market research, or had no real intent to purchase. No urgency or budget ever surfaced.</div>
+            <span class="picklist-item-tag tag-disqualify">Disqualify — no nurture</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- GROUP 2: BAD FIT -->
+      <div class="picklist-group">
+        <div class="picklist-group-header">
+          <div class="picklist-group-title">
+            <div class="group-dot" style="background:var(--red)"></div>
+            <div class="picklist-group-name c-red">Bad Fit</div>
+          </div>
+          <div class="group-rationale">Currently ~32% of NB losses. These should inform ICP refinement and MQL qualification criteria — not re-engagement.</div>
+        </div>
+        <div class="picklist-items">
+
+          <div class="picklist-item">
+            <div class="picklist-item-label">Wrong Use Case</div>
+            <div class="picklist-item-desc">Prospect's workflow or service type doesn't match what LASSO is built for. Use notes field to specify the actual use case.</div>
+            <span class="picklist-item-tag tag-disqualify">ICP signal — do not nurture</span>
+          </div>
+
+          <div class="picklist-item">
+            <div class="picklist-item-label">Wrong Business Type / Model</div>
+            <div class="picklist-item-desc">Company structure doesn't fit — individual freelancer, talent-booking agency, non-event business, etc. Crew-not-company falls here.</div>
+            <span class="picklist-item-tag tag-disqualify">ICP signal — do not nurture</span>
+          </div>
+
+          <div class="picklist-item">
+            <div class="picklist-item-label">Too Small</div>
+            <div class="picklist-item-desc">Operation size is below viable threshold for LASSO's pricing model. Event volume or headcount won't justify the platform.</div>
+            <span class="picklist-item-tag tag-disqualify">Flag for minimum size criteria</span>
+          </div>
+
+          <div class="picklist-item">
+            <div class="picklist-item-label">Geographic / Regulatory Mismatch</div>
+            <div class="picklist-item-desc">Prospect operates in a market LASSO doesn't fully support — international labor laws, currency, or localization gaps. Replaces Internationalization tag.</div>
+            <span class="picklist-item-tag tag-disqualify">Product roadmap signal</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- GROUP 3: PRICING -->
+      <div class="picklist-group">
+        <div class="picklist-group-header">
+          <div class="picklist-group-title">
+            <div class="group-dot" style="background:var(--teal)"></div>
+            <div class="picklist-group-name c-teal">Pricing / Commercial</div>
+          </div>
+          <div class="group-rationale">Currently ~13% of NB losses. Consistent across deal types. Use notes to capture the specific number or objection so packaging decisions have real data.</div>
+        </div>
+        <div class="picklist-items">
+
+          <div class="picklist-item">
+            <div class="picklist-item-label">Monthly Minimum Too High</div>
+            <div class="picklist-item-desc">Prospect understands and wants the product but can't justify the monthly floor commitment given their event volume or frequency.</div>
+            <span class="picklist-item-tag tag-pricing">Packaging signal</span>
+          </div>
+
+          <div class="picklist-item">
+            <div class="picklist-item-label">Implementation Cost Too High</div>
+            <div class="picklist-item-desc">Prospect is stopped by the onboarding or setup fee, not the ongoing subscription. Separate signal from recurring price sensitivity.</div>
+            <span class="picklist-item-tag tag-pricing">Onboarding model signal</span>
+          </div>
+
+          <div class="picklist-item">
+            <div class="picklist-item-label">Per-Person / Per-Use Cost Too High</div>
+            <div class="picklist-item-desc">PPPM or per-booking pricing model doesn't work for prospect's scale or margin structure.</div>
+            <span class="picklist-item-tag tag-pricing">Pricing model signal</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- GROUP 4: COMPETITIVE -->
+      <div class="picklist-group">
+        <div class="picklist-group-header">
+          <div class="picklist-group-title">
+            <div class="group-dot" style="background:var(--indigo)"></div>
+            <div class="picklist-group-name c-indigo">Competitive / Product</div>
+          </div>
+          <div class="group-rationale">Currently &lt;2% of NB losses — almost certainly under-tagged. These need explicit values so competitive displacement stops hiding in Bad Fit or Timing.</div>
+        </div>
+        <div class="picklist-items">
+
+          <div class="picklist-item">
+            <div class="picklist-item-label">Chose a Competitor</div>
+            <div class="picklist-item-desc">Prospect explicitly selected another platform over LASSO. Use notes to capture which competitor and the stated reason for choosing them.</div>
+            <span class="picklist-item-tag tag-competitive">Competitive intel — log in notes</span>
+          </div>
+
+          <div class="picklist-item">
+            <div class="picklist-item-label">Staying with Current Solution</div>
+            <div class="picklist-item-desc">Prospect evaluated LASSO but chose not to switch from their existing tool or process. Status quo won. Not the same as choosing a named competitor.</div>
+            <span class="picklist-item-tag tag-competitive">Status quo / change mgmt signal</span>
+          </div>
+
+          <div class="picklist-item">
+            <div class="picklist-item-label">Missing Feature / Capability</div>
+            <div class="picklist-item-desc">Prospect needed something specific that LASSO doesn't offer yet. Use notes to capture the exact feature request for product team routing.</div>
+            <span class="picklist-item-tag tag-competitive">Product roadmap signal</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- end picklist-groups -->
+
+    <!-- RETIRED VALUES -->
+    <div class="section-label">Values to retire from current picklist</div>
+    <div class="retired-section">
+      <div class="retired-title">
+        <span>🗑</span> Consolidate or Remove
+      </div>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:18px;line-height:1.6">These current values should be retired. They either create ambiguity, overlap with better-defined values, or push reps toward the notes field rather than a clean selection.</p>
+      <div class="retired-grid">
+
+        <div class="retired-item">
+          <div class="retired-item-label">Bad Fit: See Notes for Details</div>
+          <div class="retired-item-replace">Replace with → <span>Any specific Bad Fit value</span></div>
+        </div>
+
+        <div class="retired-item">
+          <div class="retired-item-label">Bad Fit: Crew, Not Company</div>
+          <div class="retired-item-replace">Merge into → <span>Wrong Business Type / Model</span></div>
+        </div>
+
+        <div class="retired-item">
+          <div class="retired-item-label">Bad Fit: Internationalization</div>
+          <div class="retired-item-replace">Rename → <span>Geographic / Regulatory Mismatch</span></div>
+        </div>
+
+        <div class="retired-item">
+          <div class="retired-item-label">Talent Book (BA's and Models)</div>
+          <div class="retired-item-replace">Merge into → <span>Wrong Use Case</span></div>
+        </div>
+
+        <div class="retired-item">
+          <div class="retired-item-label">Competitor Chosen: Flex / Deputy / Nowsta</div>
+          <div class="retired-item-replace">Merge into → <span>Chose a Competitor + notes</span></div>
+        </div>
+
+        <div class="retired-item">
+          <div class="retired-item-label">Competitor Chosen: Unknown</div>
+          <div class="retired-item-replace">Merge into → <span>Chose a Competitor + notes</span></div>
+        </div>
+
+        <div class="retired-item">
+          <div class="retired-item-label">Monthly Minimums Too High + Implementation is Too High (combined)</div>
+          <div class="retired-item-replace">Split into → <span>Two separate single-select values</span></div>
+        </div>
+
+        <div class="retired-item">
+          <div class="retired-item-label">Tire Kickers (multi-tagged with Timing)</div>
+          <div class="retired-item-replace">Use single → <span>Not Serious / Tire Kicker</span></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TOTAL COUNT -->
+    <div class="kpi-grid" style="grid-template-columns:repeat(4,1fr);margin-bottom:48px">
+      <div class="kpi amber">
+        <div class="kpi-num">13</div>
+        <div class="kpi-label">Total Values</div>
+      </div>
+      <div class="kpi red">
+        <div class="kpi-num">5</div>
+        <div class="kpi-label">Sales Process</div>
+      </div>
+      <div class="kpi teal">
+        <div class="kpi-num">4</div>
+        <div class="kpi-label">Bad Fit</div>
+      </div>
+      <div class="kpi indigo">
+        <div class="kpi-num">3+3</div>
+        <div class="kpi-label">Pricing + Competitive</div>
+      </div>
+    </div>
+
+    <footer>
+      <span>LASSO · Recommended Closed Lost Picklist · Based on Feb 2024–Feb 2026 NB Analysis</span>
+      <span>Single-select · Paired with Notes field</span>
+    </footer>
+
+  </div><!-- end tab-picklist -->
+
+<script>
+  function switchTab(id, btn) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
 
 </div>
 </body>
